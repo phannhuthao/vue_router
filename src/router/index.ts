@@ -1,34 +1,30 @@
-import About from "../page/About.vue";
-import HomePage from "../page/HomePage.vue";
 import {createRouter, createWebHistory} from "vue-router";
-import InfoPage from "../page/InfoPage.vue";
-import Bt1 from "../Session15_16/bt1.vue";
-import Bt2 from "../Session15_16/bt2.vue";
-import Bt3 from "../Session15_16/bt3.vue";
-import Bt4 from "../Session15_16/bt4.vue";
-import Bt5 from "../Session15_16/bt5.vue";
-import Bt7 from "../Session15_16/bt7.vue";
-import Product from "../page/Product.vue";
-import ProductDetail from "../page/ProductDetail.vue";
+
+import Admin from "../DemoHackton/Admin.vue";
+import Logo from "../DemoHackton/Logo.vue";
+import Category from "../DemoHackton/Category.vue";
+import Product from "../DemoHackton/Product.vue";
 
 const routes  = [
-    {path: '/about', component: About, name: 'about'},
-    {path: '/', component: HomePage, name: 'home'},
-    {path: '/info', component: InfoPage, name: 'info'},
-    {path: '/bt1', component: Bt1, name: 'bt1'},
-    {path: '/contact', component: Bt2, name: 'contact'},
-    {path: '/register', component: Bt3, name: 'register'},
-    {path: '/login', component: Bt4, name: 'login'},
-    {path: '/product', component: Product, name: 'product'},
-    {path: '/login', component: Bt4, name: 'login'},
-    {path: '/productdetail', component: ProductDetail, name: 'productdetail'},
-    { path: '/:catchAll(.*)', component: Bt5 },
-    {path: '/bt7', component: Bt7, name: 'bt7'},
+
+    {
+        path: '/admin',
+        component: Admin,
+        name: 'admin',
+        children: [
+            {path: 'category', component: Category, name: 'admin-category'},
+            {path: 'logo', component: Logo, name: 'admin-logo'},
+            {path: 'product', component: Product, name: 'admin-product'},
+
+        ]
+    },
+
+
 
 ]
 
 const router = createRouter( {
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
 
