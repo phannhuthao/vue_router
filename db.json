@@ -1,0 +1,18 @@
+{
+  "post": [
+    {
+      "id": 1,
+      "title": "Hạ",
+      "author": "vô tri"
+    }
+  ],
+  "product": [
+    {
+      "id": 2,
+      "name": "Nho",
+      "image": "",
+      "price": "20000",
+      "quantity": "70"
+    }
+  ]
+}
